@@ -1,44 +1,39 @@
-# Django-Todolist
+Docker Compose Setup for Django Todo App with MySQL and ENV Configuration
+📌 Project Overview
+This project configures a Django-based Todo application to run in Docker containers alongside a MySQL database.
+It uses Docker Compose with semantic versioning, environment variables for dynamic database configuration, and persistent storage for MySQL.
 
-Django-Todolist is a todolist web application with the most basic features of most web apps, i.e. accounts/login, API and (somewhat) interactive UI.
+🛠 Tech Stack
+    - Docker & Docker Compose
 
----
-CSS | [Skeleton](http://getskeleton.com/)
-JS  | [jQuery](https://jquery.com/)
+    - MySQL
 
-## Explore
-Try it out by installing the requirements. (Works only with python >= 3.8, due to Django 4)
+    - Python / Django
 
-    pip install -r requirements.txt
+    - Semantic Versioning
 
-Create a database schema:
+    - Shell / Environment Variables
 
-    python manage.py migrate
+🚀 What Was Done
+1. Updated docker-compose.yml to:
 
-And then start the server (default: http://localhost:8000)
+    - Use semantic versioning for images:
 
-    python manage.py runserver
+        - todo-app:2.1.0
 
+        - mysql-db:1.1.0
+          
+    - Pass database connection settings via environment variables:
+        - ENGINE=django.db.backends.mysql
+        - NAME=app_db
+        - USER=app_user
+        - PASSWORD=1234
+        - HOST=mysql
+        - PORT=3306
+2. Modified todolist/settings.py to dynamically read environment variables for the DATABASES configuration.
 
-Now you can browse the [API](http://localhost:8000/api/)
-or start on the [landing page](http://localhost:8000/)
+3. Ensured MySQL container uses a named volume for persistent data storage.
 
-## Task
-#### Prerequisites
-- Fork this repository
-
-#### Requirements
-1. pdate docker-compose to be able to set such env variables:
-    - ENGINE
-    - NAME
-    - USER
-    - PASSWORD
-    - HOST
-    - PORT
-2. Update your app to read ENV vars and set DATABASES section fields inside of todolist/settigns.py file
-3. Use semantic versioning to tag image inside the docker-compose
-4. TODO App should work as before
-5. Create PR with your changes and attach it for validation on a platform
 
 
 
