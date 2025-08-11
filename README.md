@@ -1,4 +1,5 @@
 Docker Compose Setup for Django Todo App with MySQL and ENV Configuration
+
 📌 Project Overview
 This project configures a Django-based Todo application to run in Docker containers alongside a MySQL database.
 It uses Docker Compose with semantic versioning, environment variables for dynamic database configuration, and persistent storage for MySQL.
